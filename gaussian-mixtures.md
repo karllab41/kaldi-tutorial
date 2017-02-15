@@ -1,7 +1,7 @@
 # GMM Training in Kaldi
 
 In `run.sh`, you'll come across these lines:
-![GMM-training.txt](gmm-training.png)
+![GMM-training.txt](images/gmm-training.png)
 
 In training the deltas. The first argument is the number of leaves and the number of Gaussians is the second number. Typically the ratio will be about 10-15. Anymore and it's a lot of expressive power for a given leaf.
 
