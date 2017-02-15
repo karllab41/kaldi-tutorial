@@ -26,3 +26,15 @@ Sometimes two words have the same pronunciation, for example "red" and "read". Y
 ## Phone and word mapping
 
 These are stored in `data/lang/(phones|words).txt`, in sorted order.
+
+## Topology
+
+Each is typically a HMM. It's a description of an HMM. All the phones are using the topology, and the file is called "topo". 
+
+Most of the time you don't need to monkey with this file.
+
+## Roots
+
+Groups of phonemes. The phone aj_B aj_E aj_I aj_S should be grouped together, because they're the same phoneme, only. The reason why, context dependendent and these are done with a decision tree. There's a process afterward for decoding. All these belong to the same root of a tree.
+
+![roots.txt](roots.png)
