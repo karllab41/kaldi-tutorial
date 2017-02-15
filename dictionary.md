@@ -3,7 +3,7 @@
 These are created by "prepare-dict" script, and will be stored in `/kaldi/egs/iban/s5/data/local/dicts`.
 
 In lexicon.txt:
-![lexicon.txt](lexicon.png)
+![lexicon.txt](images/lexicon.png)
 
 <UNK> is something unknown, which is replaced by SIL for silence, pronounced. Silence is pretty much used for anything that's not a word.
 
