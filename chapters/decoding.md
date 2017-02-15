@@ -12,4 +12,4 @@ Language recoding with the lattice. The script, `lmrescore_const_arpa.sh`, repro
 ![decode_lattice.txt](images/decode_rescore.png)
 Decode with the SGMM, and then rescore with the lattice. The scores were built with the different models.
 
-
+%WER. ins is insert errors. del are the deletion errors, and sub are substitution errors. ins and del should be roughly equal, or there may be some bias or some problems in the modeling. There is something called a word insertion penalty.
