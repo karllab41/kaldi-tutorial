@@ -12,3 +12,7 @@ One parameter of importance is `beam`, currently set to 10. This will speed up t
 Also, an interesting point: stage=-4. This will set the initial script to start at if you don't want to start all over.
 
 There are a whole bunch of random training transformations, based on whatever triphone and monophones.
+
+The Universal GMM and individual SGMMs:
+![The UBM (GMM5)](ubm.png)
+Before building the GMM, we'd like to understand the entire acoustic space. You first build a universal GMM for all the speech, with for example 6000 Gaussians. Then, you look at each individual sample, and build the GMM. This is called the UBM. Then, you use the UBM as the underlying subspace to seed the SGMM, which will improve performance.
