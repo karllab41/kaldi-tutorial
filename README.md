@@ -6,13 +6,13 @@ February 15, 2017
 
 For the run-down through the slides, the order is:
 
-1. [Data Preparation](dataprep.md)
-2. [Feature Extraction](featureX.md)
-3. [Dictionary Creation](dictionary.md)
-4. [Language Modeling](language-model.md)
-5. [Gaussian Mixture Modeling](gaussian-mixtures.md)
-6. [Basic Decoding](decoding.md)
-7. [Basic DNN System](dnn.md)
+1. [Data Preparation](chapters/dataprep.md)
+2. [Feature Extraction](chapters/featureX.md)
+3. [Dictionary Creation](chapters/dictionary.md)
+4. [Language Modeling](chapters/language-model.md)
+5. [Gaussian Mixture Modeling](chapters/gaussian-mixtures.md)
+6. [Basic Decoding](chapters/decoding.md)
+7. [Basic DNN System](chapters/dnn.md)
 
 ## The History of Kaldi
 
