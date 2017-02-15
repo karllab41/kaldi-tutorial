@@ -6,8 +6,6 @@ February 15, 2017
 
 ## The History of Kaldi
 
-International speech community organized a corpus free of copyright and restrictions, created a year ago towards a workshop on low-resource languages and free. It's based on [Iban](https://en.wikipedia.org/wiki/Iban_language). Pronunciation is also available, i.e. phonemes, etc..
-
 Not having enough transcribed speech. The ARPA(s), NSF, Facebook, and Google helped fund a workshop in 2010, together with Dan Povey, Lukas Burget, and many others. After the workshop, Kaldi grew, and the number of users of have grown.
 
 
@@ -40,6 +38,9 @@ Basic decoding: lattice rescoring. Models can be transferred pretty easily. Betw
 
 And then, of course, DNN system building. This should give an exposure for all the underlying code. These are going beyond the basics. Very recently, called them chain models. 
 
+## The Data from IARPA
+
+International speech community organized a corpus free of copyright and restrictions, created a year ago towards a workshop on low-resource languages and free, located at the [OpenSLR website](http://www.openslr.org/24/). It's based on [Iban](https://en.wikipedia.org/wiki/Iban_language). Pronunciation is also available, i.e. phonemes, etc..
 
 
 
