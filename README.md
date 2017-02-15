@@ -4,6 +4,14 @@ February 15, 2017
 
 [Website for the Materials](http://kaldi-asr.org/ibt.html)
 
+For the run-down through the slides, the order is:
+
+1. [Data Preparation](dataprep.md)
+2. [Feature Extraction](featureX.md)
+3. [Dictionary Creation](dictionary.md)
+4. [Language Modeling](language-model.md)
+5. [Gaussian Mixture Modeling](gaussian-mixtures.md)
+
 ## The History of Kaldi
 
 Not having enough transcribed speech. The ARPA(s), NSF, Facebook, and Google helped fund a workshop in 2010, together with Dan Povey, Lukas Burget, and many others. After the workshop, Kaldi grew, and the number of users of have grown.
