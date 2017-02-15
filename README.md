@@ -28,4 +28,18 @@ It's widely adopted in academia and industry, and unofficially. The Amazon Echo 
 
 There's a main "trunk" maintained by JHU, owned by Dan Povey. And several forks offed, where people had several ideas. The lore is that Microsoft didn't want him to do open source, so he left. When he tried to make big changes. When he updated, it started getting bureacratically difficult, and so he just left.
 
+## Building an STT System with Kaldi
+
+The first thing to do is data preparation, setting up things into a format into a way that can be ingested into Kaldi. This will be different for different purposes. The good thing about IARPA Babel, there are 25 languages, all exactly the same format.
+
+A few of the standard were: GMM. Then, the neural nework revolution in 2012 took hold use DNN's and RNN's. But many items still use GMMs right now. Acoustic models want to know which, so they need the exact alignment. So for every neural network, 10ms frames designate a phoneme. No one's going to do that aligment manually. So what you'd do is the GMM to do the alignment frame by frame, because that's what's fed into the RNN's. And until 2012, they were state of the art. In low-resource languages, they *still are low resource languages*. RNNs work better after 12 hours of data. They might be most useful. In fact, spoiler alert, they do.
+
+For basic GMM model, there are acoustic model training and language model training. There is the idea of *context*. The "a" in "cat" is vrey different than the "a" in "man". That changes the acoustic model for "man". We don't build a phoneme for "a", but we'd build in the *context* of "man" or "cat". There are 16,000 different combinations of "a", but the detailed modeling doesn't do. That's system design for language model training. Language models differ from language models in conversation. Whatever conversation. So you take models from one and models from another. Then you kind of interpolate them and mix them.
+
+Basic decoding: lattice rescoring. Models can be transferred pretty easily. Between agency, it's much easier to share models due to restrictions, etc. For example if things are classified because it was derived from data. For these, we'd use.
+
+And then, of course, DNN system building. This should give an exposure for all the underlying code. These are going beyond the basics. Very recently, called them chain models. 
+
+
+
 
