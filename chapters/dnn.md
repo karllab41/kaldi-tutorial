@@ -12,6 +12,12 @@ The third challenge as part of the Aspire Challenge, the higher order cepstral c
 
 Once the i-vector extractors, you can extract it with `extract_ivectors_online.sh`. There's one part for the training data and one for the dev data.
 
-![nn-config](../images/nnconfig.png)
+![nn-config](../images/nn-config.png)
 
 After these are all finished, then there's this the makeconfigs.py. The neural network topology is created by `make_config.py`, which has a bunch of imports of where ivectors come from, where the trigrams are, and so on. You can also specify the nonlinearities, in this case rectified linear units.
+
+The configuration gets put into `/exp/nnet3/tdnn_1/configs`.
+
+And then, in `steps/nnet3/train_dnn.py`, we train, where you can specify epochs, learning rate, samples per batch, etc.
+
+
