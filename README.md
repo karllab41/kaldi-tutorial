@@ -11,6 +11,7 @@ For the run-down through the slides, the order is:
 3. [Dictionary Creation](dictionary.md)
 4. [Language Modeling](language-model.md)
 5. [Gaussian Mixture Modeling](gaussian-mixtures.md)
+6. [Basic Decoding](decoding.md)
 
 ## The History of Kaldi
 
