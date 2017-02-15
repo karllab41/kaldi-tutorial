@@ -3,7 +3,7 @@
 These are created by "prepare-dict" script, and will be stored in `/kaldi/egs/iban/s5/data/local/dicts`.
 
 In lexicon.txt:
-![lexicon.txt](images/lexicon.png)
+![lexicon.txt](../images/lexicon.png)
 
 <UNK> is something unknown, which is replaced by SIL for silence, pronounced. Silence is pretty much used for anything that's not a word.
 
@@ -22,7 +22,7 @@ Now, there is a lexiconp.txt. Sometimes words have different pronunciations, and
 For example, the "p" in captain is different than the "p" in picture. We'd like to build different models. Left and right phonemes should be obvious within a single word. With word boundaries, it's a little more subtle. So they'll build entirely different phonemes, where a_B or a_E are two different phonemes. A separate file will associated.
 
 There's also a lexicon_disambig.txt. 
-![lexicon_disambig.txt](images/disambig.png)
+![lexicon_disambig.txt](../images/disambig.png)
 Sometimes two words have the same pronunciation, for example "red" and "read". You may have the correct phoneme, but the definition words, and computation is difficult. Kaldi uses finite state machines (FSM), and attempting to parse through the FSM, this will be problematic. To remedy, just call them two different pronunciations. It will put different pronunciation symbols in front of them. There will be hashtags with a number after it before and after the phonemes. The number of that will be the maximum number of words with the same sound...this number is typically small. 
 
 ## Phone and word mapping
@@ -39,7 +39,7 @@ Most of the time you don't need to monkey with this file.
 
 Groups of phonemes. The phone aj_B aj_E aj_I aj_S should be grouped together, because they're the same phoneme, only. The reason why, context dependendent and these are done with a decision tree. There's a process afterward for decoding. All these belong to the same root of a tree.
 
-![roots.txt](images/roots.png)
+![roots.txt](../images/roots.png)
 
 ## Extra questions
 

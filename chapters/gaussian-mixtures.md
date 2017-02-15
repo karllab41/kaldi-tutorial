@@ -1,7 +1,7 @@
 # GMM Training in Kaldi
 
 In `run.sh`, you'll come across these lines:
-![GMM-training.txt](images/gmm-training.png)
+![GMM-training.txt](../images/gmm-training.png)
 
 In training the deltas. The first argument is the number of leaves and the number of Gaussians is the second number. Typically the ratio will be about 10-15. Anymore and it's a lot of expressive power for a given leaf.
 
@@ -14,5 +14,5 @@ Also, an interesting point: stage=-4. This will set the initial script to start 
 There are a whole bunch of random training transformations, based on whatever triphone and monophones.
 
 The Universal GMM and individual SGMMs:
-![The UBM (GMM5)](images/ubm.png)
+![The UBM (GMM5)](../images/ubm.png)
 Before building the GMM, we'd like to understand the entire acoustic space. You first build a universal GMM for all the speech, with for example 6000 Gaussians. Then, you look at each individual sample, and build the GMM. This is called the UBM. Then, you use the UBM as the underlying subspace to seed the SGMM, which will improve performance.
