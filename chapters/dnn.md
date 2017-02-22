@@ -18,6 +18,8 @@ After these are all finished, then there's this the makeconfigs.py. The neural n
 
 The configuration gets put into `/exp/nnet3/tdnn_1/configs`.
 
-And then, in `steps/nnet3/train_dnn.py`, we train, where you can specify epochs, learning rate, samples per batch, etc.
+And then, in `steps/nnet3/train_dnn.py`, we train, where you can specify epochs, learning rate, samples per batch, etc. That can be seen:
+
+![train_dnn](../images/train-dnn.png)
 
 

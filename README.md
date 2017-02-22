@@ -4,7 +4,9 @@ February 15, 2017
 
 [Website for the Materials](http://kaldi-asr.org/ibt.html)
 
-For the run-down through the slides, the order is:
+Kaldi is actually the name of a legendary Ethiopian goat herder who discovered coffee, and its logo is a coffee bean with headphones. Kaldi is a C++ library with command line tools, and most importantly, "recipes", freely available via [Github](https://github.com/kaldi-asr/kaldi) in an Apache 2.0 license. It has gotten top STT performance in open benchmark tests, received 300+ citations in 2014 based on Google Scholar, 400+ citations in 2015, and about 500 in 2016.
+
+Kaldi played a big role in the IARPA Babel program and subsequent follow-ons like IARPA ASPiRE. This Github page are notes taken from a non-user (myself) during the class, which ran for a single day and went through a single example. The basic organization through the class is:
 
 1. [Data Preparation](chapters/dataprep.md)
 2. [Feature Extraction](chapters/featureX.md)
@@ -16,25 +18,30 @@ For the run-down through the slides, the order is:
 
 ## The History of Kaldi
 
-Not having enough transcribed speech. The ARPA(s), NSF, Facebook, and Google helped fund a workshop in 2010, together with Dan Povey, Lukas Burget, and many others. After the workshop, Kaldi grew, and the number of users of have grown.
+The community was aware that while high-resource languages like English and Chinese were abundant in transcribed and labeled data, literally any other language was severely limited in the amount of transcribed speech that can be leveraged to build recognition systems. In light of this problem, the ARPA(s), NSF, Facebook, and Google helped fund a workshop in 2010, together with Dan Povey, Lukas Burget, and many others to build an open source platform to help researchers explore the problem of speech to text, and it is because of this, Kaldi was born. After the workshop, as Kaldi grew in functionality and flexibility, the number of users of have grown across the local community as well as internationally.
 
+Regarding speech to text (STT) specifically, NIST had initially formulated several datasets and challenges around TREC SDR, the Spoken Document Retrieval (SDR) problem. In 1998, broadcast news was entirely transcribed, and data was scraped from these sources. The performers so well on SDR that it was deemed a solved problem until 2006, where if you searched for a key term that a broadcaster mentioned, retrieval from STT was as good as retrieval from reference transcripts. 
 
-NIST TREC SDR. Meanwhile, in 1998 broadcast news had transcription. If you searched for it. But, in the IC, NIST STD Pilot (2006). Anchors are seasoned speakers and pronounced. But what about telephone conversations were very difficult. The second issue was that there was limited languages. Thus, 2012 IARPA launched Babel a month after Dan Povey returned to Kaldi's birthplace. The focus: transcribe conversational telphone speech but with a few subtle changes. Focus on low-resource conditions. Concurrent progress in multiple languages, with keyword search as a metric and task. That's where Kaldi got a big boost.
+The problem of speech search and STT was, in fact, far from solved as in the intelligence community (IC), conversational speech was exceedingly difficult to process and make use of. In the original challenge, anchors were seasoned speakers and pronounced words differently than how conversational speech sounds. Error rates were unacceptably high, and prompted a second research program focusing on telephone conversations: the NIST STD Pilot (2006). Through the pilot, it was discovered that STT was found to be inadequate for spoken term detection (STD). The conversational tone and speech patterns were the first issue that the challenge contended with. The second issue was the limited language diversity in the corpus. 
 
-And unofficially, ten teams did well, and everyone use it. And IBM didn't use Kaldi. In Singapore, they pretty much used Kaldi's recipes and beat.
+Thus, 2012 IARPA launched Babel a month after Dan Povey returned to Kaldi's birthplace after leaving Microsoft. For IARPA, IC priorities, including data, methods, and metrics, were used to build systems for recognizing keyword search, using limited and realistic situations over many languages. The problem was to transcribe conversational telphone speech but with a few subtle changes. The focus was on low-resource conditions. Concurrent progress was to be made in multiple languages, with keyword search as a metric and task. It is during the IARPA Babel program where Kaldi got a big boost.
+
+Unofficially, ten teams did well, perhaps because everyone except for IBM started with the baseline of Kaldi. In Singapore, one of the top performers, Kaldi recipes were exclusively used and beat out many other performers.
 
 
 ## Kaldi Today
 
-Right now, it's a C++ library with "recipes". Recipes are sets of shell scripts that are sequences and steps. How you build your system, depends on recipe, you may want to use tools in a different ways based on whether or not there are tones or clicks. Even if you were an expert, you'd have a difficult time. So what you would do, you'd use different recipes focused on different things.
+Kaldi is a C++ library with "recipes". Recipes are sets of shell scripts that are sequences and steps that instruct on how you build your system. The application depends on recipe, you may want to use tools in a different ways based on the situation. For example, whether or not there are tones or clicks in the language, you will want to adjust your recipe to use different clustering parameters. For this reason, even if you were an expert, you'd have a difficult time deciding the parameters. Recipes are designed through experimentation to be target these different attributes, and you'd use different recipes focused on different things.
 
-For example, when Kaldi was created, far-field wasn't created. The code-base called AMI, the standard recipe didn't do well. There's a switchboard recipe that works for AMI. There is a Babel recipe that works. They're all in the Github link. That's what Kaldi. There are a bunch of libraries, and then there are recipes. It's like legos. You can build things on your own, or you can build it according to recipes.
+For example, when Kaldi was created, far-field language retrieval wasn't effectively implemented. A database called AMI (a corpus consisting of 100 hours of meeting recordings) was poorly accomodated for by Kaldi. That is to say, the standard recipe didn't do well. Now, there's a switchboard recipe that works for AMI. Likewise, there are several Babel recipe that work. These are all in the Github link. 
 
-Top STT performance in open benchmark tests.
+That's how Kaldi was explained to me. The TL;DR version; there are a bunch of libraries, and then there are recipes. Like legos, you can build things on your own, or you can build it according to recipes.
 
-It's widely adopted in academia and industry, and unofficially. The Amazon Echo is built entirely from this. Siri, the new one, is going to use Kaldi. Call centers are converting to Kaldi, originating monitoring emerging problems with products. 3-4 engineers were able to do it in a few months based on Amazon cloud. On the order 100k calls per day. Small groups can build commercially viable systems.
+## Kaldi's Reach
 
-There's a main "trunk" maintained by JHU, owned by Dan Povey. And several forks offed, where people had several ideas. The lore is that Microsoft didn't want him to do open source, so he left. When he tried to make big changes. When he updated, it started getting bureacratically difficult, and so he just left.
+Kaldi now has top STT performance in several open benchmark tests. It's widely adopted in academia and industry, and unofficially, the Amazon Echo is built entirely from this. Siri, in its new iteration, is going to use Kaldi. Call centers are converting to Kaldi, a problem which originated from monitoring emerging problems with products. It was found that 3-4 engineers were able to build complex systems in a few months with Kaldi on Amazon cloud. These systems take in on the order 100k calls per day. That's the mantra: small groups can build commercially viable systems.
+
+There's a main "trunk" maintained by JHU, owned by Dan Povey, and several forks were created as many people had several ideas on its direction. Povey, again, left Microsoft to return to JHU, where is on faculty, and the lore is that he left Microsoft because they made it difficult to contribute to open source. When he tried to make big changes. When he updated, it started getting bureacratically difficult, and so he just left.
 
 ## Building an STT System with Kaldi
 
